@@ -1,0 +1,5 @@
+{
+  "domains": [
+    "vesta.%s.minepos.net", "panel.%s.minepos.net", "node.%s.minepos.net"
+  ]
+}

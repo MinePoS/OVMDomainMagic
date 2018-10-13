@@ -1,0 +1,38 @@
+plugins {
+    id 'java'
+    id 'idea'
+    id 'application'
+    id 'io.franzbecker.gradle-lombok' version '1.14'
+    id 'com.github.johnrengelman.shadow' version '4.0.1'
+}
+
+
+group = 'me.piggypiglet'
+version = '1.0.0'
+mainClassName = 'me.piggypiglet.ovmdm.OVMDMBootstrap'
+targetCompatibility = 1.8
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+dependencies {
+    compile 'com.google.inject:guice:+'
+    compile 'commons-io:commons-io:+'
+    compile 'com.google.code.gson:gson:+'
+}
+
+lombok {
+    version = '1.18.2'
+    sha256 = ""
+}
+
+shadowJar {
+    exclude 'META-INF/*.SF'
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+}
+
+compileJava.options.encoding = 'UTF-8'
